@@ -10,6 +10,14 @@ type FavoritesByType = {
   courses: Favorite<Course>[];
 };
 
+// TODO : Remove this any and solve third point
+const reducerParam: any = { 
+  classes: [], 
+  meditations: [], 
+  articles: [], 
+  courses: [] 
+};
+
 const getFavoritesByType = (favorites: Favorite[]) => {
   return favorites.reduce(
     (acc, d) => {
@@ -23,7 +31,7 @@ const getFavoritesByType = (favorites: Favorite[]) => {
       if (d.content.__typename === "Article") acc.articles.push(d);
       return acc;
     },
-    { classes: [], meditations: [], articles: [], courses: [] }
+    reducerParam
   );
 };
 

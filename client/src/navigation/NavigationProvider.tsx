@@ -11,7 +11,7 @@ import {
   MeditationPlayerScreen
 } from "../screens";
 import { ErrorMessage } from "../components";
-import { Favorite } from '../screens/FavoritesScreen/types'
+import { FavoriteContent } from '../screens/FavoritesScreen/types'
 import React, { createContext, useState, FunctionComponent } from "react";
 
 type TSFixMe = {
@@ -19,7 +19,7 @@ type TSFixMe = {
 }
 
 type RouteParams = {
-  content?: Favorite;
+  content?: FavoriteContent;
   id?: string;
 }
 
