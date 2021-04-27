@@ -1,33 +1,28 @@
 import React from "react";
 import { useNavigation } from "../../navigation";
-import { Favorite, Class, Meditation, Course, Article } from "./types";
+import { Favorite } from "./types";
 import { FavoritesSection } from "./FavoritesSection";
 
 type FavoritesByType = {
-  classes: Favorite<Class>[];
-  meditations: Favorite<Meditation>[];
-  articles: Favorite<Article>[];
-  courses: Favorite<Course>[];
-};
-
-// TODO : Remove this any and solve third point
-const reducerParam: any = { 
-  classes: [], 
-  meditations: [], 
-  articles: [], 
-  courses: [] 
+  classes: Favorite[];
+  meditations: Favorite[];
+  articles: Favorite[];
+  courses: Favorite[];
 };
 
 const getFavoritesByType = (favorites: Favorite[]) => {
+  const reducerParam: FavoritesByType = { 
+    classes: [], 
+    meditations: [], 
+    articles: [], 
+    courses: [] 
+  };
+
   return favorites.reduce(
     (acc, d) => {
-      // @ts-ignore TSFixMe
       if (d.content.__typename === "Class") acc.classes.push(d);
-      // @ts-ignore TSFixMe
       if (d.content.__typename === "Course") acc.courses.push(d);
-      // @ts-ignore TSFixMe
       if (d.content.__typename === "Meditation") acc.meditations.push(d);
-      // @ts-ignore TSFixMe
       if (d.content.__typename === "Article") acc.articles.push(d);
       return acc;
     },

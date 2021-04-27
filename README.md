@@ -52,7 +52,8 @@ Before you begin your task, your team members need some help with a few TypeScri
 
 ##### Response to the Junior Dev
 
-* "We should not use `as` here because... **@TODO_WRITE_YOUR_ANSWER_HERE**"
+* "We should not use `as` here because...
+`as` keyword in typescript is basically used to assign quick types to the variable or function. While in this project we've created strict types for each type of data and component. So if we use `as` keyword at any place then it can create unexpected errors at many places. That's why we should not use quick types when we already have strict types defined in `/types` folder.
 
 ## Your Tasks (2): New Download Feature
 The team is grateful for your help resolving those TypeScript issues! Now, you sit down to read your requirements for the new Downloads feature you've been tasked with.
