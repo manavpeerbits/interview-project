@@ -21,6 +21,7 @@ type TSFixMe = {
 type RouteParams = {
   content?: FavoriteContent;
   id?: string;
+  isOffline?: boolean;
 }
 
 type InitialRouteType = {
